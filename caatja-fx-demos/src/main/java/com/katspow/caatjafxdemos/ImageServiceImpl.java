@@ -3,6 +3,7 @@ package com.katspow.caatjafxdemos;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -15,14 +16,13 @@ public class ImageServiceImpl implements CaatjaFxImageService {
 	@Override
 	public HashMap<String, String> getImages(
 			HashMap<String, String> imagesToLoad) {
-		HashMap<String, String> result = new HashMap<String, String>();
+		HashMap<String, String> result = new HashMap<>();
 
-		// Put images on server
+        // Put images on server
 		for (Map.Entry<String, String> entry : imagesToLoad.entrySet()) {
 
-			// System.out.println(entry.getKey());
-
-			InputStream is = this.getClass().getResourceAsStream("images/" + entry.getValue());
+            final String name = entry.getValue();
+            InputStream is = this.getClass().getResourceAsStream(name);
 
 			ByteArrayOutputStream buffer = new ByteArrayOutputStream();
 
