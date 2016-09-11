@@ -13,7 +13,7 @@ public class Main extends Application {
 		// primaryStage.setTitle("Drawing Operations Test");
 
 		try {
-			CaatjaFx.init(primaryStage, new ImageLoader());
+			CaatjaFx.init(930, 500, primaryStage, new ImageLoader());
 			
 			new TreeDemo().start(CaatjaFx.getFxPane());
 			
